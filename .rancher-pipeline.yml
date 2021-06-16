@@ -3,7 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: java:8
-      shellScript: maven clean install
+      shellScript: mvn clean install
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       tag: spring-boot-docker
