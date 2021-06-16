@@ -4,7 +4,7 @@ FROM frolvlad/alpine-java:jre8-slim
 ENV TZ=Asia/Shanghai \
         JAVA_OPTS="" \
         PARAMS="" \
-        jarName=web
+        jarName=spring-boot-docker
 
 #配置时区、阿里云下载源、添加时区（apk add 下载失败时 重启 systemctl daemon-reload 和 systemctl restart docker 即可解决）
 RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories \
