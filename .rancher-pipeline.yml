@@ -1,7 +1,19 @@
 stages:
 - name: package
   steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
+  - runScriptConfig:
+      image: java:8
+      shellScript: maven clean install
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      tag: spring-boot-docker
+      registry: 127.0.0.1:34313
+- name: fabu
+  steps:
+  - applyAppConfig:
+      catalogTemplate: spring-boot
+      version: spring-boot
+      name: spring-boot-docker
+      targetNamespace: nginx
 timeout: 60
 notification: {}
