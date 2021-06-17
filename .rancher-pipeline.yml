@@ -2,7 +2,7 @@ stages:
 - name: package
   steps:
   - runScriptConfig:
-      image: maven:3.8.1-jdk-8
+      image: registry.cn-hangzhou.aliyuncs.com/liuwenzhong/maven3
       shellScript: mvn clean install
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
