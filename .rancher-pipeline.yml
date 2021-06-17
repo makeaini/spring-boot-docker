@@ -7,7 +7,6 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       tag: spring-boot-docker
-      pushRemote: true
       registry: 127.0.0.1:34313
 - name: fabu
   steps:
